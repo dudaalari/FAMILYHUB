@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FamilyHub — Gestão da Tribo</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNGY4ZWY3Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjN2MzYWVkIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Y0NzJiNiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMwZDE0MjEiLz4KICA8cG9seWdvbiBwb2ludHM9IjMyLDEwIDgsMzAgNTYsMzAiIGZpbGw9InVybCgjZykiLz4KICA8cmVjdCB4PSIxMiIgeT0iMzAiIHdpZHRoPSI0MCIgaGVpZ2h0PSIyNiIgcng9IjIiIGZpbGw9InVybCgjZykiLz4KICA8cmVjdCB4PSIyNiIgeT0iNDAiIHdpZHRoPSIxMiIgaGVpZ2h0PSIxNiIgcng9IjMiIGZpbGw9IiMwZDE0MjEiLz4KICA8cmVjdCB4PSIxNCIgeT0iMzMiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHJ4PSIyIiBmaWxsPSIjMGQxNDIxIiBvcGFjaXR5PSIwLjU1Ii8+CiAgPHJlY3QgeD0iNDIiIHk9IjMzIiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiByeD0iMiIgZmlsbD0iIzBkMTQyMSIgb3BhY2l0eT0iMC41NSIvPgogIDxjaXJjbGUgY3g9IjQ3IiBjeT0iMTciIHI9IjQiIGZpbGw9IiNmYmJmMjQiIG9wYWNpdHk9IjAuODUiLz4KPC9zdmc+Cg==">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAEg0lEQVRYhb2VW2xURRjHf3M5p92F3m9CaenFS0ggbkIsIdFoVBLEWxSMUYwk6KPRYNTE+OKbIA8EeSTVByFRHyTRmPhiwotGozQNAkVoa6mAStuUbovt7jkz48OeXZZ2z0Kbwj85OfOdmfn+v/lmJkdQpJUt3c0ytG8ieNLBPcAKlkdTCAaE5Wi6Th1mcDCT7xAF86bOF4SjF6haJtM4ncW556YnRs4WACLzL4uBbqsEEwKxOT02fF6sbOluFsYOcvtXPl8np8fXblSVlbXvI3j8DpsDtFSsSI9oJ3hqKbOFUGxc/w7K+fx65iOsDRefxLlXNdC92Hm+V81Dqf201m5CGketaOX4wHtkwnRhzIYOQaoL+ofh9xEXlyolqho7Y3tLqSrZxmP3H6SuohNpQIYOaSB9bZTvh/YwOfcn69dC7x6JFGAdvHbAcupC6XxyMear6zfxbOoIjbITPefQs67wbnRreLG1l7Urekh1CWR0n6SAVFf85bplgPvu2s7Wew+RDKvQcw5v1uHl31lLwhnqKxPs6tqPmdyCsbl5xkLfUHyRb7oFQig2d7zNhsaXkMYhQ5AGROjQwuLJ3OMri5YGX1o8ZflLf8qVxBecOG84PVomfzmACl3Nlq59tCd7EEX77SuDlrZg5kmTA5nXPjvVx8Ez+7gWzCweoKaijW0dB2jQnUjjUM5FiU3JFecqYRa0x+Yu82HfXkZnLt06QNvKHp5o3UvCVaOjEnsqZ6alxY8gSq36xnYunjPTfPDbIX65cvrmAOtrn+fR5nepUPKGFeeT+jIqf4xZXFvKkI/7v+KzP364tS14YOdR6ptSyNChwmj/Q5DBvDh0qGBeHI3Lxxenf+TYxbdKboEu+RVoaEgx+88g2ZkJpHEk/RZqku2FpDIEVWQiQ1ChQwZwdWaIucwE0kCd18i6mh6OXSztEwugs45LA99AGCIsaOFTv+6Nssb5+Pz4d+AClHCMSY+OqtfjbOIBVMZBECItCAvOZlCZyCxvHsyLIzgRmStpcWKOhBf/oypbAQ8fazIICwqJzrqyxto5fG1IKI0VGZSweFKS1MFSKgBdq5/mWnoUaRzV/hpUJnfATox8wsm/j2BsLrESPpubdvNw0y58Zehp2sJUMIqWjlWJFhJ6iRWo89tpqG2/fvKzudUWmwMYl+XnsV62rn4ZX1lqKlbRrZrxlcFXFl8tAUBlXOwVLDbPK3QBCR0WmRp8aQrxkioQd9jidB1gIcTiK5BdaKxCyiZLeuGCleeBygFMATULAIqvXODwhMX3cv+DOCV0ULL8ZQDSEugvSZZ1qIxDB5ZKaUjoMPd4AVp4C8Z7wovGBNG46IniUnIwJBF8Xqrz0uRP+M4WTAsAOmRb20486V+HlZrtnc9EhkUQEcipyYGSABLxrYBHdFXDhT4EG+LqdJs0he/dLeF4iBA7EEzcQXPnnNg9ffncuASYHh8+h3UPAqVrtbyack7smJkY/hpA5b9mZ6+OZ/9rPewngn8FrhYhqoDKZTKdcYhTEnEY33tl5srgiXzH/yGLY0Wl2gEtAAAAAElFTkSuQmCC">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080c14;
+  --bg2: #0d1421;
+  --bg3: #111928;
+  --surface: #151f30;
+  --surface2: #1a2640;
+  --border: rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.12);
+  --text: #e8edf5;
+  --muted: #6b7fa0;
+  --accent: #4f8ef7;
+  --accent2: #7c3aed;
+  --pink: #f472b6;
+  --green: #34d399;
+  --yellow: #fbbf24;
+  --red: #f87171;
+  --cyan: #22d3ee;
+  --sidebar-w: 240px;
+  --radius: 14px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+html.light {
+  --bg: #f0f4fa;
+  --bg2: #ffffff;
+  --bg3: #e8edf5;
+  --surface: #ffffff;
+  --surface2: #e2e8f4;
+  --border: rgba(0,0,0,0.08);
+  --border2: rgba(0,0,0,0.14);
+  --text: #1a2235;
+  --muted: #7a8aaa;
+  --shadow: 0 4px 24px rgba(0,0,0,0.1);
+}
+.theme-toggle {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--border2);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  transition: all .2s;
+  flex-shrink: 0;
+}
+.theme-toggle:hover { border-color: var(--accent); background: var(--surface2); }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 15px; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+h1,h2,h3,h4,h5 { font-family: 'Syne', sans-serif; }
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--surface2); border-radius: 99px; }
+
+/* ===== SIDEBAR ===== */
+#sidebar {
+  width: var(--sidebar-w);
+  height: 100vh;
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  z-index: 100;
+  transition: transform .3s ease;
+  overflow-y: auto;
+}
+.logo {
+  padding: 24px 20px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.logo-mark {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  background: linear-gradient(135deg, #4f8ef7, #7c3aed, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+.logo-sub { font-size: 0.7rem; color: var(--muted); margin-top: 2px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+nav { padding: 16px 12px; flex: 1; }
+.nav-label { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin: 12px 0 6px; }
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all .2s;
+  margin-bottom: 2px;
+  border: 1px solid transparent;
+}
+.nav-item:hover { background: var(--surface); color: var(--text); }
+.nav-item.active {
+  background: linear-gradient(135deg, rgba(79,142,247,0.15), rgba(124,58,237,0.1));
+  color: var(--accent);
+  border-color: rgba(79,142,247,0.2);
+}
+.nav-item .icon { font-size: 1.1rem; width: 20px; text-align: center; }
+
+.sidebar-footer {
+  padding: 16px;
+  border-top: 1px solid var(--border);
+}
+.notif-btn {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.85rem;
+  transition: all .2s;
+}
+.notif-btn:hover { border-color: var(--accent); }
+.badge {
+  background: var(--red);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 99px;
+  padding: 2px 7px;
+  min-width: 20px;
+  text-align: center;
+}
+.badge.hidden { display: none; }
+
+/* ===== MAIN ===== */
+#main {
+  margin-left: var(--sidebar-w);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ===== TOPBAR ===== */
+#topbar {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  padding: 0 28px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.topbar-title { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; }
+.topbar-actions { display: flex; align-items: center; gap: 10px; }
+.btn {
+  padding: 8px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all .2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-primary { background: linear-gradient(135deg, #4f8ef7, #7c3aed); color: #fff; }
+.btn-primary:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(79,142,247,0.35); }
+.btn-ghost { background: var(--surface); color: var(--text); border: 1px solid var(--border2); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+.btn-danger { background: rgba(248,113,113,0.15); color: var(--red); border: 1px solid rgba(248,113,113,0.2); }
+.btn-danger:hover { background: rgba(248,113,113,0.25); }
+.btn-sm { padding: 5px 12px; font-size: 0.78rem; border-radius: 8px; }
+.btn-success { background: rgba(52,211,153,0.15); color: var(--green); border: 1px solid rgba(52,211,153,0.2); }
+.btn-success:hover { background: rgba(52,211,153,0.25); }
+
+/* ===== PAGE CONTENT ===== */
+#content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 28px;
+}
+
+/* ===== PAGES ===== */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ===== DASHBOARD ===== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .2s;
+}
+.stat-card:hover { border-color: var(--border2); }
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+}
+.stat-card.blue::before { background: linear-gradient(90deg, var(--accent), transparent); }
+.stat-card.purple::before { background: linear-gradient(90deg, var(--accent2), transparent); }
+.stat-card.green::before { background: linear-gradient(90deg, var(--green), transparent); }
+.stat-card.pink::before { background: linear-gradient(90deg, var(--pink), transparent); }
+.stat-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+.stat-value { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; margin: 6px 0 2px; }
+.stat-sub { font-size: 0.75rem; color: var(--muted); }
+.stat-icon { position: absolute; right: 16px; top: 16px; font-size: 1.6rem; opacity: 0.75; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.card-title { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; }
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  transition: all .2s;
+}
+.activity-item:last-child { border-bottom: none; }
+.activity-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.activity-info { flex: 1; min-width: 0; }
+.activity-title { font-size: 0.88rem; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.activity-meta { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+.activity-actions { display: flex; gap: 6px; opacity: 0; transition: opacity .2s; }
+.activity-item:hover .activity-actions { opacity: 1; }
+
+.tipo-badge {
+  font-size: 0.68rem;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.tipo-Escolar { background: rgba(79,142,247,0.15); color: var(--accent); border: 1px solid rgba(79,142,247,0.2); }
+.tipo-Esporte { background: rgba(52,211,153,0.15); color: var(--green); border: 1px solid rgba(52,211,153,0.2); }
+.tipo-Social { background: rgba(244,114,182,0.15); color: var(--pink); border: 1px solid rgba(244,114,182,0.2); }
+.tipo-Saúde { background: rgba(251,191,36,0.15); color: var(--yellow); border: 1px solid rgba(251,191,36,0.2); }
+.tipo-Outro { background: rgba(107,127,160,0.15); color: var(--muted); border: 1px solid rgba(107,127,160,0.2); }
+
+.prio-alta { color: var(--red); }
+.prio-media { color: var(--yellow); }
+.prio-baixa { color: var(--green); }
+
+/* Ranking */
+.rank-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.rank-item:last-child { border-bottom: none; }
+.rank-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.85rem; color: #fff;
+  flex-shrink: 0;
+}
+.rank-info { flex: 1; }
+.rank-name { font-size: 0.88rem; font-weight: 500; }
+.rank-papel { font-size: 0.72rem; color: var(--muted); }
+.rank-pts { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; }
+.rank-bar-wrap { height: 4px; background: var(--bg3); border-radius: 99px; margin-top: 4px; }
+.rank-bar { height: 4px; border-radius: 99px; transition: width .6s ease; }
+
+/* Gráfico de tipos (CSS bars) */
+.chart-bar-item { margin-bottom: 12px; }
+.chart-bar-label { display: flex; justify-content: space-between; font-size: 0.78rem; margin-bottom: 4px; }
+.chart-bar-track { height: 8px; background: var(--bg3); border-radius: 99px; overflow: hidden; }
+.chart-bar-fill { height: 100%; border-radius: 99px; transition: width .8s ease; }
+
+/* ===== MEMBROS ===== */
+.membros-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.membro-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .2s, transform .2s;
+}
+.membro-card:hover { border-color: var(--border2); transform: translateY(-2px); }
+.membro-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.membro-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.membro-avatar {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 1.2rem; color: #fff;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
+}
+.membro-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; }
+.membro-role { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+.membro-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+.membro-stat { background: var(--bg3); border-radius: 10px; padding: 10px; text-align: center; }
+.membro-stat-val { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.4rem; }
+.membro-stat-lbl { font-size: 0.68rem; color: var(--muted); margin-top: 2px; }
+.membro-actions { display: flex; gap: 8px; }
+
+/* ===== ATIVIDADES ===== */
+.filters-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+.filter-chip {
+  padding: 6px 14px;
+  border-radius: 99px;
+  border: 1px solid var(--border2);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all .2s;
+}
+.filter-chip:hover, .filter-chip.active { background: rgba(79,142,247,0.15); border-color: var(--accent); color: var(--accent); }
+.search-input {
+  flex: 1; min-width: 200px;
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  padding: 8px 14px;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color .2s;
+}
+.search-input:focus { border-color: var(--accent); }
+.search-input::placeholder { color: var(--muted); }
+
+.atividades-list { display: flex; flex-direction: column; gap: 10px; }
+.ativ-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: border-color .2s;
+  position: relative;
+  overflow: hidden;
+}
+.ativ-card:hover { border-color: var(--border2); }
+.ativ-card.concluida { opacity: 0.5; }
+.ativ-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+}
+.ativ-card.tipo-Escolar::before { background: var(--accent); }
+.ativ-card.tipo-Esporte::before { background: var(--green); }
+.ativ-card.tipo-Social::before { background: var(--pink); }
+.ativ-card.tipo-Saúde::before { background: var(--yellow); }
+.ativ-card.tipo-Outro::before { background: var(--muted); }
+
+.ativ-check {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--border2);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .2s;
+  flex-shrink: 0;
+}
+.ativ-check:hover { border-color: var(--green); }
+.ativ-check.done { background: var(--green); border-color: var(--green); }
+.ativ-body { flex: 1; min-width: 0; }
+.ativ-title { font-size: 0.92rem; font-weight: 600; margin-bottom: 4px; }
+.ativ-title.done { text-decoration: line-through; }
+.ativ-details { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.ativ-member { display: flex; align-items: center; gap: 5px; font-size: 0.75rem; color: var(--muted); }
+.member-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.ativ-date { font-size: 0.75rem; color: var(--muted); }
+.ativ-actions { display: flex; gap: 6px; }
+.icon-btn {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--border2);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem;
+  transition: all .2s;
+}
+.icon-btn:hover { background: var(--surface2); color: var(--text); border-color: var(--border2); }
+.icon-btn.delete:hover { color: var(--red); border-color: rgba(248,113,113,0.3); background: rgba(248,113,113,0.1); }
+.icon-btn.edit:hover { color: var(--accent); border-color: rgba(79,142,247,0.3); background: rgba(79,142,247,0.1); }
+
+/* ===== CALENDARIO ===== */
+.cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.cal-nav { display: flex; align-items: center; gap: 12px; }
+.cal-month { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 700; min-width: 180px; text-align: center; }
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+.cal-dayname {
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 8px 0;
+  letter-spacing: 0.05em;
+}
+.cal-day {
+  min-height: 90px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px;
+  cursor: pointer;
+  transition: border-color .2s;
+  position: relative;
+}
+.cal-day:hover { border-color: var(--border2); }
+.cal-day.other-month { opacity: 0.35; }
+.cal-day.today { border-color: var(--accent); background: rgba(79,142,247,0.05); }
+.cal-day.today .cal-day-num { background: var(--accent); color: #fff; border-radius: 50%; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; }
+.cal-day-num { font-size: 0.82rem; font-weight: 600; margin-bottom: 4px; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; }
+.cal-events { display: flex; flex-direction: column; gap: 2px; }
+.cal-event {
+  font-size: 0.65rem;
+  padding: 2px 5px;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+.cal-event.Escolar { background: rgba(79,142,247,0.2); color: #93c5fd; }
+.cal-event.Esporte { background: rgba(52,211,153,0.2); color: #6ee7b7; }
+.cal-event.Social { background: rgba(244,114,182,0.2); color: #f9a8d4; }
+.cal-event.Saúde { background: rgba(251,191,36,0.2); color: #fcd34d; }
+.cal-event.Outro { background: rgba(107,127,160,0.15); color: var(--muted); }
+.cal-more { font-size: 0.65rem; color: var(--muted); padding-left: 5px; }
+
+.cal-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--muted); cursor: pointer; }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+/* ===== MODAL ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+}
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+.modal {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 18px;
+  padding: 28px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: var(--shadow);
+  transform: scale(0.95) translateY(10px);
+  transition: transform .25s ease;
+}
+.modal-overlay.open .modal { transform: scale(1) translateY(0); }
+.modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+.modal-title { font-family: 'Syne', sans-serif; font-size: 1.15rem; font-weight: 700; }
+.modal-close { width: 32px; height: 32px; border-radius: 8px; border: 1px solid var(--border2); background: transparent; color: var(--muted); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1rem; transition: all .2s; }
+.modal-close:hover { background: var(--surface2); color: var(--text); }
+.modal-footer { display: flex; gap: 10px; justify-content: flex-end; margin-top: 24px; }
+
+/* ===== FORM ===== */
+.form-group { margin-bottom: 16px; }
+.form-label { display: block; font-size: 0.78rem; color: var(--muted); margin-bottom: 6px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+  appearance: none;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(79,142,247,0.15);
+}
+.form-input::placeholder, .form-textarea::placeholder { color: var(--muted); }
+.form-select option { background: var(--bg2); }
+.form-textarea { min-height: 80px; resize: vertical; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.color-picker-wrap { display: flex; align-items: center; gap: 10px; }
+.form-color { width: 44px; height: 40px; border-radius: 10px; border: 1px solid var(--border2); cursor: pointer; padding: 4px; background: var(--bg3); }
+
+/* ===== NOTIFICAÇÕES PANEL ===== */
+.notif-panel {
+  position: fixed;
+  right: 0; top: 0; bottom: 0;
+  width: 340px;
+  background: var(--bg2);
+  border-left: 1px solid var(--border);
+  z-index: 200;
+  transform: translateX(100%);
+  transition: transform .3s ease;
+  display: flex;
+  flex-direction: column;
+}
+.notif-panel.open { transform: translateX(0); }
+.notif-panel-header { padding: 20px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+.notif-panel-title { font-family: 'Syne', sans-serif; font-weight: 700; }
+.notif-list { flex: 1; overflow-y: auto; padding: 16px; }
+.notif-item {
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  margin-bottom: 8px;
+  font-size: 0.82rem;
+  transition: opacity .2s;
+}
+.notif-item.lida { opacity: 0.45; }
+.notif-item-time { font-size: 0.7rem; color: var(--muted); margin-top: 4px; }
+.notif-empty { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 40px 20px; }
+.notif-overlay { position: fixed; inset: 0; z-index: 199; display: none; }
+.notif-overlay.open { display: block; }
+
+/* ===== LOGIN ===== */
+#login-page {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  display: none;
+}
+#login-page.active { display: flex; }
+.login-box {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+.login-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2rem; background: linear-gradient(135deg, #4f8ef7, #7c3aed, #f472b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 6px; }
+.login-sub { color: var(--muted); font-size: 0.85rem; margin-bottom: 32px; }
+.login-tabs { display: flex; background: var(--bg3); border-radius: 10px; padding: 4px; margin-bottom: 24px; }
+.login-tab { flex: 1; padding: 8px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; font-weight: 500; color: var(--muted); transition: all .2s; border: none; background: transparent; }
+.login-tab.active { background: var(--surface2); color: var(--text); }
+
+/* ===== TOAST ===== */
+#toast-container { position: fixed; bottom: 24px; right: 24px; z-index: 9999; display: flex; flex-direction: column; gap: 8px; }
+.toast {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--shadow);
+  transform: translateX(120%);
+  transition: transform .3s ease;
+  min-width: 240px;
+}
+.toast.show { transform: translateX(0); }
+.toast.success { border-color: rgba(52,211,153,0.3); }
+.toast.error { border-color: rgba(248,113,113,0.3); }
+.toast-icon { font-size: 1.1rem; }
+
+/* ===== EMPTY STATE ===== */
+.empty-state { text-align: center; padding: 60px 20px; color: var(--muted); }
+.empty-state-icon { font-size: 3rem; margin-bottom: 12px; opacity: 0.4; }
+.empty-state-text { font-size: 0.9rem; }
+
+/* ===== LOADING ===== */
+.skeleton {
+  background: linear-gradient(90deg, var(--surface) 25%, var(--surface2) 50%, var(--surface) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+@keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+
+/* ===== MOBILE ===== */
+.hamburger { display: none; background: var(--surface); border: 1px solid var(--border2); color: var(--text); width: 36px; height: 36px; border-radius: 8px; cursor: pointer; font-size: 1rem; align-items: center; justify-content: center; }
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  #sidebar { transform: translateX(-100%); }
+  #sidebar.mobile-open { transform: translateX(0); box-shadow: 4px 0 30px rgba(0,0,0,0.5); }
+  #main { margin-left: 0; }
+  #content { padding: 16px; }
+  .cal-grid { gap: 2px; }
+  .cal-day { min-height: 60px; padding: 5px; }
+  .cal-day-num { font-size: 0.72rem; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+
+/* Animações de entrada */
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+.fade-up { animation: fadeUp .4s ease forwards; }
+.fade-up-2 { animation: fadeUp .4s .1s ease both; }
+.fade-up-3 { animation: fadeUp .4s .2s ease both; }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside id="sidebar">
+  <div class="logo">
+    <div class="logo-mark">FamilyHub</div>
+    <div class="logo-sub">Sistema da Tribo</div>
+  </div>
+  <nav>
+    <div class="nav-label">Menu Principal</div>
+    <div class="nav-item active" onclick="navigate('dashboard')">
+      <span class="icon">🏠</span> Dashboard
+    </div>
+    <div class="nav-item" onclick="navigate('membros')">
+      <span class="icon">👥</span> Membros
+    </div>
+    <div class="nav-item" onclick="navigate('atividades')">
+      <span class="icon">✅</span> Atividades
+    </div>
+    <div class="nav-item" onclick="navigate('calendario')">
+      <span class="icon">📅</span> Calendário
+    </div>
+    <div class="nav-label">Relatórios</div>
+    <div class="nav-item" onclick="navigate('relatorios')">
+      <span class="icon">📊</span> Relatórios
+    </div>
+    <div class="nav-item" onclick="navigate('gamificacao')">
+      <span class="icon">🏆</span> Gamificação
+    </div>
+  </nav>
+  <div class="sidebar-footer">
+    <div class="notif-btn" onclick="toggleNotif()">
+      <span>🔔 Notificações</span>
+      <span class="badge hidden" id="notif-badge">0</span>
+    </div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<div id="main">
+  <!-- TOPBAR -->
+  <div id="topbar">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="hamburger" onclick="toggleSidebar()">☰</button>
+      <span class="topbar-title" id="page-title">Dashboard</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="topbar-actions" id="topbar-actions"></div>
+      <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()" title="Alternar tema"></button>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div id="content">
+
+    <!-- DASHBOARD -->
+    <div class="page active" id="page-dashboard">
+      <div class="stats-grid fade-up">
+        <div class="stat-card blue">
+          <div class="stat-icon">👥</div>
+          <div class="stat-label">Membros</div>
+          <div class="stat-value" id="stat-membros">—</div>
+          <div class="stat-sub">da família</div>
+        </div>
+        <div class="stat-card purple">
+          <div class="stat-icon">📋</div>
+          <div class="stat-label">Total de Atividades</div>
+          <div class="stat-value" id="stat-total">—</div>
+          <div class="stat-sub">cadastradas</div>
+        </div>
+        <div class="stat-card green">
+          <div class="stat-icon">✅</div>
+          <div class="stat-label">Concluídas Hoje</div>
+          <div class="stat-value" id="stat-concluidas">—</div>
+          <div class="stat-sub">hoje</div>
+        </div>
+        <div class="stat-card pink">
+          <div class="stat-icon">⏳</div>
+          <div class="stat-label">Pendentes</div>
+          <div class="stat-value" id="stat-pendentes">—</div>
+          <div class="stat-sub">a fazer</div>
+        </div>
+      </div>
+
+      <div class="grid-2 fade-up-2">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">📅 Atividades de Hoje</span>
+            <button class="btn btn-ghost btn-sm" onclick="navigate('atividades')">Ver todas</button>
+          </div>
+          <div id="hoje-list">
+            <div style="text-align:center;padding:30px;color:var(--muted)">Carregando...</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">🏆 Ranking da Tribo</span>
+          </div>
+          <div id="ranking-list"></div>
+        </div>
+      </div>
+
+      <div class="grid-2 fade-up-3" style="margin-top:20px">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">📊 Atividades por Tipo</span>
+          </div>
+          <div id="chart-tipos"></div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">📌 Próximas Atividades</span>
+            <button class="btn btn-ghost btn-sm" onclick="openModalAtiv()">+ Nova</button>
+          </div>
+          <div id="proximas-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEMBROS -->
+    <div class="page" id="page-membros">
+      <div class="membros-grid fade-up" id="membros-grid"></div>
+    </div>
+
+    <!-- ATIVIDADES -->
+    <div class="page" id="page-atividades">
+      <div class="filters-bar fade-up">
+        <input type="text" class="search-input" id="search-ativ" placeholder="🔍 Pesquisar atividades..." oninput="filterAtividades()">
+        <div class="filter-chip active" onclick="setFiltroTipo(this,'')">Todos</div>
+        <div class="filter-chip" onclick="setFiltroTipo(this,'Escolar')">📚 Escolar</div>
+        <div class="filter-chip" onclick="setFiltroTipo(this,'Esporte')">⚽ Esporte</div>
+        <div class="filter-chip" onclick="setFiltroTipo(this,'Social')">🎉 Social</div>
+        <div class="filter-chip" onclick="setFiltroTipo(this,'Saúde')">❤️ Saúde</div>
+        <div class="filter-chip" onclick="setFiltroTipo(this,'Outro')">📌 Outro</div>
+        <select class="form-select" style="width:auto;padding:7px 12px" id="filtro-membro" onchange="filterAtividades()">
+          <option value="">Todos os membros</option>
+        </select>
+      </div>
+      <div class="atividades-list fade-up-2" id="ativ-list"></div>
+    </div>
+
+    <!-- CALENDÁRIO -->
+    <div class="page" id="page-calendario">
+      <div class="cal-legend fade-up" id="cal-legend">
+        <div class="legend-item"><span class="legend-dot" style="background:var(--accent)"></span>Escolar</div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--green)"></span>Esporte</div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--pink)"></span>Social</div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--yellow)"></span>Saúde</div>
+        <div class="legend-item"><span class="legend-dot" style="background:var(--muted)"></span>Outro</div>
+      </div>
+      <div class="card fade-up-2">
+        <div class="cal-header">
+          <div class="cal-nav">
+            <button class="btn btn-ghost btn-sm" onclick="calNav(-1)">‹ Anterior</button>
+          </div>
+          <div class="cal-month" id="cal-month-label"></div>
+          <div class="cal-nav">
+            <button class="btn btn-ghost btn-sm" onclick="calNav(1)">Próximo ›</button>
+          </div>
+        </div>
+        <div class="cal-grid" id="cal-grid"></div>
+      </div>
+    </div>
+
+    <!-- RELATÓRIOS -->
+    <div class="page" id="page-relatorios">
+      <div class="grid-2 fade-up">
+        <div class="card">
+          <div class="card-header"><span class="card-title">📈 Atividades por Membro</span></div>
+          <div id="rel-por-membro"></div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">📊 Distribuição por Tipo</span></div>
+          <div id="rel-por-tipo"></div>
+        </div>
+      </div>
+      <div class="card fade-up-2" style="margin-top:20px">
+        <div class="card-header"><span class="card-title">📋 Taxa de Conclusão por Prioridade</span></div>
+        <div id="rel-prioridade"></div>
+      </div>
+    </div>
+
+    <!-- GAMIFICAÇÃO -->
+    <div class="page" id="page-gamificacao">
+      <div class="grid-2 fade-up">
+        <div class="card">
+          <div class="card-header"><span class="card-title">🏆 Placar Geral</span></div>
+          <div id="game-ranking"></div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">⭐ Como Ganhar Pontos</span></div>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
+            <div style="background:var(--bg3);border-radius:10px;padding:14px;display:flex;align-items:center;gap:12px">
+              <span style="font-size:1.4rem">🔴</span>
+              <div><div style="font-weight:600;font-size:0.9rem">Atividade de Alta Prioridade</div><div style="color:var(--muted);font-size:0.78rem">+30 pontos ao concluir</div></div>
+            </div>
+            <div style="background:var(--bg3);border-radius:10px;padding:14px;display:flex;align-items:center;gap:12px">
+              <span style="font-size:1.4rem">🟡</span>
+              <div><div style="font-weight:600;font-size:0.9rem">Atividade de Média Prioridade</div><div style="color:var(--muted);font-size:0.78rem">+20 pontos ao concluir</div></div>
+            </div>
+            <div style="background:var(--bg3);border-radius:10px;padding:14px;display:flex;align-items:center;gap:12px">
+              <span style="font-size:1.4rem">🟢</span>
+              <div><div style="font-weight:600;font-size:0.9rem">Atividade de Baixa Prioridade</div><div style="color:var(--muted);font-size:0.78rem">+10 pontos ao concluir</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card fade-up-2" style="margin-top:20px">
+        <div class="card-header"><span class="card-title">🎖️ Conquistas da Tribo</span></div>
+        <div id="game-conquistas" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:8px"></div>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+</div><!-- /main -->
+
+<!-- NOTIFICAÇÕES PANEL -->
+<div class="notif-overlay" id="notif-overlay" onclick="toggleNotif()"></div>
+<div class="notif-panel" id="notif-panel">
+  <div class="notif-panel-header">
+    <span class="notif-panel-title">🔔 Notificações</span>
+    <div style="display:flex;gap:8px">
+      <button class="btn btn-ghost btn-sm" onclick="marcarTodasLidas()">Marcar lidas</button>
+      <button class="modal-close" onclick="toggleNotif()">✕</button>
+    </div>
+  </div>
+  <div class="notif-list" id="notif-list"></div>
+</div>
+
+<!-- MODAL MEMBRO -->
+<div class="modal-overlay" id="modal-membro">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title" id="modal-membro-title">Novo Membro</span>
+      <button class="modal-close" onclick="closeModal('modal-membro')">✕</button>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Nome completo *</label>
+      <input type="text" class="form-input" id="membro-nome" placeholder="Ex: Maria Silva">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Papel na família *</label>
+      <select class="form-select" id="membro-papel">
+        <option value="">Selecione...</option>
+        <option>Pai</option><option>Mãe</option><option>Filho(a)</option>
+        <option>Avô</option><option>Avó</option><option>Outro</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Cor do perfil</label>
+      <div class="color-picker-wrap">
+        <input type="color" class="form-color" id="membro-cor" value="#4f8ef7">
+        <span style="font-size:0.8rem;color:var(--muted)">Escolha uma cor para identificar o membro</span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('modal-membro')">Cancelar</button>
+      <button class="btn btn-primary" onclick="salvarMembro()">💾 Salvar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL ATIVIDADE -->
+<div class="modal-overlay" id="modal-ativ">
+  <div class="modal" style="max-width:520px">
+    <div class="modal-header">
+      <span class="modal-title" id="modal-ativ-title">Nova Atividade</span>
+      <button class="modal-close" onclick="closeModal('modal-ativ')">✕</button>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Título *</label>
+      <input type="text" class="form-input" id="ativ-titulo" placeholder="Ex: Reunião Escolar">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Descrição</label>
+      <textarea class="form-textarea" id="ativ-descricao" placeholder="Detalhes da atividade..."></textarea>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Tipo *</label>
+        <select class="form-select" id="ativ-tipo">
+          <option value="">Selecione...</option>
+          <option>Escolar</option><option>Esporte</option><option>Social</option>
+          <option>Saúde</option><option>Outro</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Prioridade</label>
+        <select class="form-select" id="ativ-prioridade">
+          <option value="media">Média</option>
+          <option value="alta">Alta</option>
+          <option value="baixa">Baixa</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Membro responsável *</label>
+      <select class="form-select" id="ativ-membro">
+        <option value="">Selecione...</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Data *</label>
+        <input type="date" class="form-input" id="ativ-data">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Horário</label>
+        <input type="time" class="form-input" id="ativ-hora">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('modal-ativ')">Cancelar</button>
+      <button class="btn btn-primary" onclick="salvarAtiv()">💾 Salvar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL DIA DO CALENDÁRIO -->
+<div class="modal-overlay" id="modal-dia">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title" id="modal-dia-title">Atividades do Dia</span>
+      <button class="modal-close" onclick="closeModal('modal-dia')">✕</button>
+    </div>
+    <div id="modal-dia-content"></div>
+    <div class="modal-footer">
+      <button class="btn btn-primary" onclick="closeModal('modal-dia');openModalAtiv()">+ Nova Atividade</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST CONTAINER -->
+<div id="toast-container"></div>
+
+<script>
+// ============================
+// CONFIG
+// ============================
+const API = 'http://localhost:3000/api';
+
+// Estado da app
+let state = {
+  membros: [],
+  atividades: [],
+  stats: {},
+  currentPage: 'dashboard',
+  calYear: new Date().getFullYear(),
+  calMonth: new Date().getMonth() + 1,
+  filtroTipo: '',
+  editingMembro: null,
+  editingAtiv: null,
+  calAtividades: [],
+};
+
+// ============================
+// INIT
+// ============================
+async function init() {
+  await loadAll();
+  renderPage('dashboard');
+  checkNotificacoes();
+  // Verifica notificações a cada 30s
+  setInterval(checkNotificacoes, 30000);
+}
+
+async function loadAll() {
+  try {
+    const [membros, stats] = await Promise.all([
+      api('GET', '/membros'),
+      api('GET', '/stats'),
+    ]);
+    state.membros = membros || [];
+    state.stats = stats || {};
+  } catch(e) {
+    toast('Erro ao conectar com o servidor. Verifique se ele está rodando.', 'error');
+  }
+}
+
+// ============================
+// API HELPER
+// ============================
+async function api(method, endpoint, body) {
+  const opts = { method, headers: { 'Content-Type': 'application/json' } };
+  if (body) opts.body = JSON.stringify(body);
+  const res = await fetch(API + endpoint, opts);
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.error || 'Erro na requisição');
+  }
+  return res.json();
+}
+
+// ============================
+// NAVEGAÇÃO
+// ============================
+const pageTitles = {
+  dashboard: 'Dashboard',
+  membros: 'Membros da Família',
+  atividades: 'Atividades',
+  calendario: 'Calendário',
+  relatorios: 'Relatórios',
+  gamificacao: 'Gamificação 🏆',
+};
+
+function navigate(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n => {
+    if (n.textContent.toLowerCase().includes(pageTitles[page]?.split(' ')[0]?.toLowerCase() || page)) n.classList.add('active');
+  });
+  document.getElementById('page-title').textContent = pageTitles[page] || page;
+  state.currentPage = page;
+  renderPage(page);
+  // Fechar sidebar mobile
+  document.getElementById('sidebar').classList.remove('mobile-open');
+}
+
+function renderPage(page) {
+  const actions = document.getElementById('topbar-actions');
+  actions.innerHTML = '';
+  if (page === 'dashboard') { renderDashboard(); }
+  else if (page === 'membros') {
+    actions.innerHTML = `<button class="btn btn-primary" onclick="openModalMembro()">+ Novo Membro</button>`;
+    renderMembros();
+  }
+  else if (page === 'atividades') {
+    actions.innerHTML = `<button class="btn btn-primary" onclick="openModalAtiv()">+ Nova Atividade</button>`;
+    renderAtividades();
+    populateMembroSelect('filtro-membro', true);
+    populateMembroSelect('ativ-membro');
+  }
+  else if (page === 'calendario') {
+    actions.innerHTML = `<button class="btn btn-primary" onclick="openModalAtiv()">+ Nova Atividade</button>`;
+    renderCalendario();
+  }
+  else if (page === 'relatorios') { renderRelatorios(); }
+  else if (page === 'gamificacao') { renderGamificacao(); }
+}
+
+// ============================
+// DASHBOARD
+// ============================
+async function renderDashboard() {
+  try {
+    const [stats, hoje] = await Promise.all([
+      api('GET', '/stats'),
+      api('GET', '/atividades/hoje'),
+    ]);
+    state.stats = stats;
+
+    document.getElementById('stat-membros').textContent = stats.totalMembros || 0;
+    document.getElementById('stat-total').textContent = stats.totalAtiv || 0;
+    document.getElementById('stat-concluidas').textContent = stats.concluidasHoje || 0;
+    document.getElementById('stat-pendentes').textContent = stats.pendentes || 0;
+
+    // Hoje
+    const hojeEl = document.getElementById('hoje-list');
+    if (!hoje || hoje.length === 0) {
+      hojeEl.innerHTML = `<div class="empty-state"><div class="empty-state-icon">🌟</div><div class="empty-state-text">Nenhuma atividade hoje</div></div>`;
+    } else {
+      hojeEl.innerHTML = hoje.map(a => atividadeItemHTML(a, true)).join('');
+    }
+
+    // Ranking
+    const rankEl = document.getElementById('ranking-list');
+    const maxPts = Math.max(...(stats.topMembros||[]).map(m => m.pontos), 1);
+    rankEl.innerHTML = (stats.topMembros||[]).map((m,i) => `
+      <div class="rank-item">
+        <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:${i===0?'var(--yellow)':i===1?'var(--muted)':i===2?'#cd7f32':'var(--muted)'};width:20px">${i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1}</div>
+        <div class="rank-avatar" style="background:${m.cor||'#6366f1'}">${m.nome[0]}</div>
+        <div class="rank-info">
+          <div class="rank-name">${m.nome}</div>
+          <div class="rank-bar-wrap"><div class="rank-bar" style="width:${(m.pontos/maxPts)*100}%;background:${m.cor||'#6366f1'}"></div></div>
+        </div>
+        <div class="rank-pts" style="color:${m.cor||'#6366f1'}">${m.pontos} pts</div>
+      </div>
+    `).join('') || '<div class="empty-state"><div class="empty-state-text">Nenhum membro</div></div>';
+
+    // Chart tipos
+    const chartEl = document.getElementById('chart-tipos');
+    const cores = { Escolar:'var(--accent)', Esporte:'var(--green)', Social:'var(--pink)', Saúde:'var(--yellow)', Outro:'var(--muted)' };
+    const maxT = Math.max(...(stats.porTipo||[]).map(t => t.total), 1);
+    chartEl.innerHTML = (stats.porTipo||[]).map(t => `
+      <div class="chart-bar-item">
+        <div class="chart-bar-label"><span>${t.tipo}</span><span style="color:var(--muted)">${t.total}</span></div>
+        <div class="chart-bar-track"><div class="chart-bar-fill" style="width:${(t.total/maxT)*100}%;background:${cores[t.tipo]||'var(--muted)'}"></div></div>
+      </div>
+    `).join('') || '<div style="color:var(--muted);font-size:0.85rem">Sem dados</div>';
+
+    // Próximas
+    const proximas = await api('GET', '/atividades?concluida=0');
+    const proxEl = document.getElementById('proximas-list');
+    const futuras = (proximas||[]).filter(a => !a.concluida).slice(0, 5);
+    proxEl.innerHTML = futuras.length ? futuras.map(a => atividadeItemHTML(a, true)).join('') : `<div class="empty-state"><div class="empty-state-icon">🎉</div><div class="empty-state-text">Tudo em dia!</div></div>`;
+
+    // Notif badge
+    document.getElementById('notif-badge').textContent = stats.notLidas || 0;
+    document.getElementById('notif-badge').classList.toggle('hidden', !stats.notLidas);
+
+  } catch(e) { console.error(e); }
+}
+
+function atividadeItemHTML(a, mini = false) {
+  const done = a.concluida;
+  return `
+    <div class="activity-item" id="ait-${a.id}">
+      <div class="activity-dot" style="background:${a.membro_cor||'#6366f1'}"></div>
+      <div class="activity-info">
+        <div class="activity-title ${done?'done':''}" style="${done?'text-decoration:line-through;opacity:.5':''}">
+          ${a.titulo}
+        </div>
+        <div class="activity-meta">
+          ${a.membro_nome ? `<span>${a.membro_nome}</span> · ` : ''}
+          <span>${formatDate(a.data_inicio)}${a.hora?' às '+a.hora:''}</span>
+          <span class="tipo-badge tipo-${a.tipo}" style="margin-left:6px">${a.tipo}</span>
+        </div>
+      </div>
+      <div class="activity-actions">
+        <button class="icon-btn" onclick="toggleConcluir(${a.id})" title="${done?'Reabrir':'Concluir'}">${done?'↩':'✓'}</button>
+      </div>
+    </div>
+  `;
+}
+
+// ============================
+// MEMBROS
+// ============================
+async function renderMembros() {
+  const grid = document.getElementById('membros-grid');
+  grid.innerHTML = `<div style="text-align:center;padding:40px;color:var(--muted)">Carregando...</div>`;
+  try {
+    const membros = await api('GET', '/membros');
+    state.membros = membros;
+    grid.innerHTML = membros.length ? membros.map(m => membroCardHTML(m)).join('') : `<div class="empty-state"><div class="empty-state-icon">👥</div><div class="empty-state-text">Nenhum membro cadastrado</div></div>`;
+  } catch(e) { grid.innerHTML = `<div class="empty-state"><div class="empty-state-text">Erro ao carregar</div></div>`; }
+}
+
+function membroCardHTML(m) {
+  const pct = m.total > 0 ? Math.round((m.concluidas / m.total) * 100) : 0;
+  return `
+    <div class="membro-card fade-up" style="--delay:${Math.random()*0.2}s">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:${m.cor||'#6366f1'}"></div>
+      <div class="membro-header">
+        <div class="membro-avatar" style="background:${m.cor||'#6366f1'}">${m.nome[0].toUpperCase()}</div>
+        <div>
+          <div class="membro-name">${m.nome}</div>
+          <div class="membro-role">${m.papel}</div>
+        </div>
+      </div>
+      <div class="membro-stats">
+        <div class="membro-stat">
+          <div class="membro-stat-val" style="color:${m.cor||'#6366f1'}">${m.total||0}</div>
+          <div class="membro-stat-lbl">Atividades</div>
+        </div>
+        <div class="membro-stat">
+          <div class="membro-stat-val" style="color:var(--green)">${m.concluidas||0}</div>
+          <div class="membro-stat-lbl">Concluídas</div>
+        </div>
+      </div>
+      <div style="margin-bottom:16px">
+        <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:var(--muted);margin-bottom:6px">
+          <span>Taxa de conclusão</span><span>${pct}%</span>
+        </div>
+        <div class="rank-bar-wrap"><div class="rank-bar" style="width:${pct}%;background:${m.cor||'#6366f1'}"></div></div>
+      </div>
+      <div style="background:var(--bg3);border-radius:10px;padding:10px;text-align:center;margin-bottom:16px">
+        <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;color:var(--yellow)">⭐ ${m.pontos||0}</div>
+        <div style="font-size:0.72rem;color:var(--muted)">pontos</div>
+      </div>
+      <div class="membro-actions">
+        <button class="btn btn-ghost btn-sm" style="flex:1" onclick="editMembro(${m.id})">✏️ Editar</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteMembro(${m.id})">🗑️</button>
+      </div>
+    </div>
+  `;
+}
+
+// ============================
+// ATIVIDADES
+// ============================
+let todasAtividades = [];
+
+async function renderAtividades() {
+  const list = document.getElementById('ativ-list');
+  list.innerHTML = `<div style="text-align:center;padding:40px;color:var(--muted)">Carregando...</div>`;
+  try {
+    const ativs = await api('GET', '/atividades');
+    todasAtividades = ativs || [];
+    filterAtividades();
+  } catch(e) { list.innerHTML = `<div class="empty-state"><div class="empty-state-text">Erro ao carregar</div></div>`; }
+}
+
+function filterAtividades() {
+  const q = document.getElementById('search-ativ')?.value?.toLowerCase() || '';
+  const tipo = state.filtroTipo;
+  const membroId = document.getElementById('filtro-membro')?.value || '';
+  let filtered = todasAtividades;
+  if (q) filtered = filtered.filter(a => a.titulo.toLowerCase().includes(q) || a.descricao?.toLowerCase().includes(q));
+  if (tipo) filtered = filtered.filter(a => a.tipo === tipo);
+  if (membroId) filtered = filtered.filter(a => a.id_membro == membroId);
+
+  const list = document.getElementById('ativ-list');
+  if (filtered.length === 0) {
+    list.innerHTML = `<div class="empty-state"><div class="empty-state-icon">📋</div><div class="empty-state-text">Nenhuma atividade encontrada</div></div>`;
+    return;
+  }
+  list.innerHTML = filtered.map(a => ativCardHTML(a)).join('');
+}
+
+function ativCardHTML(a) {
+  const done = a.concluida;
+  const prioEmoji = { alta:'🔴', media:'🟡', baixa:'🟢' };
+  return `
+    <div class="ativ-card tipo-${a.tipo} ${done?'concluida':''}" id="ac-${a.id}">
+      <div class="ativ-check ${done?'done':''}" onclick="toggleConcluir(${a.id})" title="${done?'Reabrir':'Concluir'}">
+        ${done?'<span style="color:#fff;font-size:0.8rem">✓</span>':''}
+      </div>
+      <div class="ativ-body">
+        <div class="ativ-title ${done?'done':''}">${a.titulo}</div>
+        <div class="ativ-details">
+          <span class="tipo-badge tipo-${a.tipo}">${a.tipo}</span>
+          <span style="font-size:0.75rem">${prioEmoji[a.prioridade]||''} ${a.prioridade||''}</span>
+          ${a.membro_nome ? `<div class="ativ-member"><div class="member-dot" style="background:${a.membro_cor||'#6366f1'}"></div>${a.membro_nome}</div>` : ''}
+          <span class="ativ-date">📅 ${formatDate(a.data_inicio)}${a.hora?' ⏰ '+a.hora:''}</span>
+        </div>
+      </div>
+      <div class="ativ-actions">
+        <button class="icon-btn edit" onclick="editAtiv(${a.id})" title="Editar">✏️</button>
+        <button class="icon-btn delete" onclick="deleteAtiv(${a.id})" title="Excluir">🗑️</button>
+      </div>
+    </div>
+  `;
+}
+
+function setFiltroTipo(el, tipo) {
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  state.filtroTipo = tipo;
+  filterAtividades();
+}
+
+// ============================
+// CALENDÁRIO
+// ============================
+const MESES = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+const DIAS = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+
+async function renderCalendario() {
+  document.getElementById('cal-month-label').textContent = `${MESES[state.calMonth-1]} ${state.calYear}`;
+  try {
+    const ativs = await api('GET', `/atividades?mes=${state.calMonth}&ano=${state.calYear}`);
+    state.calAtividades = ativs || [];
+    buildCalGrid();
+  } catch(e) { console.error(e); }
+}
+
+function buildCalGrid() {
+  const grid = document.getElementById('cal-grid');
+  grid.innerHTML = DIAS.map(d => `<div class="cal-dayname">${d}</div>`).join('');
+
+  const primeiroDia = new Date(state.calYear, state.calMonth-1, 1).getDay();
+  const totalDias = new Date(state.calYear, state.calMonth, 0).getDate();
+  const hoje = new Date();
+
+  // Dias do mês anterior
+  const diasMesAnt = new Date(state.calYear, state.calMonth-1, 0).getDate();
+  for (let i = primeiroDia - 1; i >= 0; i--) {
+    grid.innerHTML += `<div class="cal-day other-month"><div class="cal-day-num">${diasMesAnt-i}</div></div>`;
+  }
+
+  // Dias do mês atual
+  for (let dia = 1; dia <= totalDias; dia++) {
+    const dateStr = `${state.calYear}-${String(state.calMonth).padStart(2,'0')}-${String(dia).padStart(2,'0')}`;
+    const isToday = hoje.getDate()===dia && hoje.getMonth()===state.calMonth-1 && hoje.getFullYear()===state.calYear;
+    const dayAtivs = state.calAtividades.filter(a => a.data_inicio === dateStr);
+    const maxShow = 3;
+
+    grid.innerHTML += `
+      <div class="cal-day${isToday?' today':''}" onclick="openDia('${dateStr}')">
+        <div class="cal-day-num">${dia}</div>
+        <div class="cal-events">
+          ${dayAtivs.slice(0,maxShow).map(a => `<div class="cal-event ${a.tipo}" title="${a.titulo}">${a.hora?a.hora+' ':''} ${a.titulo}</div>`).join('')}
+          ${dayAtivs.length > maxShow ? `<div class="cal-more">+${dayAtivs.length-maxShow} mais</div>` : ''}
+        </div>
+      </div>
+    `;
+  }
+
+  // Completar grid
+  const total = primeiroDia + totalDias;
+  const resto = 7 - (total % 7);
+  if (resto < 7) for (let i = 1; i <= resto; i++) grid.innerHTML += `<div class="cal-day other-month"><div class="cal-day-num">${i}</div></div>`;
+}
+
+function calNav(dir) {
+  state.calMonth += dir;
+  if (state.calMonth > 12) { state.calMonth = 1; state.calYear++; }
+  if (state.calMonth < 1) { state.calMonth = 12; state.calYear--; }
+  renderCalendario();
+}
+
+function openDia(dateStr) {
+  const dayAtivs = state.calAtividades.filter(a => a.data_inicio === dateStr);
+  const [y,m,d] = dateStr.split('-');
+  document.getElementById('modal-dia-title').textContent = `📅 ${d}/${m}/${y}`;
+  const content = document.getElementById('modal-dia-content');
+  if (dayAtivs.length === 0) {
+    content.innerHTML = `<div class="empty-state"><div class="empty-state-icon">🌟</div><div class="empty-state-text">Nenhuma atividade neste dia</div></div>`;
+  } else {
+    content.innerHTML = dayAtivs.map(a => `
+      <div class="activity-item">
+        <div class="activity-dot" style="background:${a.membro_cor||'#6366f1'}"></div>
+        <div class="activity-info">
+          <div class="activity-title">${a.titulo}</div>
+          <div class="activity-meta">${a.membro_nome||''} ${a.hora?' · '+a.hora:''} <span class="tipo-badge tipo-${a.tipo}" style="margin-left:4px">${a.tipo}</span></div>
+        </div>
+        ${a.concluida ? '<span style="color:var(--green);font-size:0.8rem">✅</span>' : ''}
+      </div>
+    `).join('');
+  }
+  openModal('modal-dia');
+}
+
+// ============================
+// RELATÓRIOS
+// ============================
+async function renderRelatorios() {
+  try {
+    const [membros, ativs] = await Promise.all([
+      api('GET', '/membros'),
+      api('GET', '/atividades'),
+    ]);
+    const cores = { Escolar:'var(--accent)', Esporte:'var(--green)', Social:'var(--pink)', Saúde:'var(--yellow)', Outro:'var(--muted)' };
+
+    // Por membro
+    const porMembro = document.getElementById('rel-por-membro');
+    const maxA = Math.max(...membros.map(m => m.total||0), 1);
+    porMembro.innerHTML = membros.map(m => `
+      <div class="chart-bar-item">
+        <div class="chart-bar-label">
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:${m.cor};display:inline-block"></span>${m.nome}</span>
+          <span style="color:var(--muted)">${m.total||0} (${m.concluidas||0} ✅)</span>
+        </div>
+        <div class="chart-bar-track"><div class="chart-bar-fill" style="width:${((m.total||0)/maxA)*100}%;background:${m.cor||'#6366f1'}"></div></div>
+      </div>
+    `).join('') || '<div style="color:var(--muted)">Sem dados</div>';
+
+    // Por tipo
+    const porTipo = document.getElementById('rel-por-tipo');
+    const tipos = {};
+    ativs.forEach(a => { tipos[a.tipo] = (tipos[a.tipo]||0)+1; });
+    const maxT = Math.max(...Object.values(tipos), 1);
+    porTipo.innerHTML = Object.entries(tipos).map(([tipo,total]) => `
+      <div class="chart-bar-item">
+        <div class="chart-bar-label"><span>${tipo}</span><span style="color:var(--muted)">${total}</span></div>
+        <div class="chart-bar-track"><div class="chart-bar-fill" style="width:${(total/maxT)*100}%;background:${cores[tipo]||'var(--muted)'}"></div></div>
+      </div>
+    `).join('') || '<div style="color:var(--muted)">Sem dados</div>';
+
+    // Por prioridade
+    const prioEl = document.getElementById('rel-prioridade');
+    const prios = { alta:[], media:[], baixa:[] };
+    ativs.forEach(a => { if(prios[a.prioridade]) prios[a.prioridade].push(a); });
+    const prioLabels = { alta:'🔴 Alta', media:'🟡 Média', baixa:'🟢 Baixa' };
+    prioEl.innerHTML = Object.entries(prios).map(([p, arr]) => {
+      const conc = arr.filter(a => a.concluida).length;
+      const pct = arr.length ? Math.round((conc/arr.length)*100) : 0;
+      return `
+        <div style="display:flex;align-items:center;gap:16px;padding:12px 0;border-bottom:1px solid var(--border)">
+          <div style="min-width:100px;font-weight:500">${prioLabels[p]}</div>
+          <div style="flex:1">
+            <div class="chart-bar-track"><div class="chart-bar-fill" style="width:${pct}%;background:${p==='alta'?'var(--red)':p==='media'?'var(--yellow)':'var(--green)'}"></div></div>
+          </div>
+          <div style="font-size:0.8rem;color:var(--muted);min-width:80px">${conc}/${arr.length} (${pct}%)</div>
+        </div>
+      `;
+    }).join('');
+
+  } catch(e) { console.error(e); }
+}
+
+// ============================
+// GAMIFICAÇÃO
+// ============================
+async function renderGamificacao() {
+  try {
+    const membros = await api('GET', '/membros');
+    const sorted = [...membros].sort((a,b) => (b.pontos||0)-(a.pontos||0));
+    const maxPts = Math.max(...sorted.map(m => m.pontos||0), 1);
+
+    const rankEl = document.getElementById('game-ranking');
+    rankEl.innerHTML = sorted.map((m,i) => `
+      <div class="rank-item">
+        <div style="font-size:1.4rem;width:28px">${i===0?'🥇':i===1?'🥈':i===2?'🥉':'#'+(i+1)}</div>
+        <div class="rank-avatar" style="background:${m.cor||'#6366f1'};width:44px;height:44px;font-size:1.1rem">${m.nome[0]}</div>
+        <div class="rank-info">
+          <div class="rank-name" style="font-size:0.95rem">${m.nome}</div>
+          <div style="color:var(--muted);font-size:0.72rem">${m.papel}</div>
+          <div class="rank-bar-wrap" style="margin-top:6px"><div class="rank-bar" style="width:${((m.pontos||0)/maxPts)*100}%;background:${m.cor||'#6366f1'}"></div></div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;color:${m.cor||'#6366f1'}">${m.pontos||0}</div>
+          <div style="font-size:0.68rem;color:var(--muted)">pontos</div>
+        </div>
+      </div>
+    `).join('') || '<div style="color:var(--muted)">Sem membros</div>';
+
+    // Conquistas
+    const conquEl = document.getElementById('game-conquistas');
+    const conquistas = [
+      { icon:'🌟', nome:'Primeira Atividade', desc:'Criou a primeira atividade', obtida: sorted.some(m => (m.total||0) > 0) },
+      { icon:'🏃', nome:'Maratonista', desc:'Completou 5 atividades', obtida: sorted.some(m => (m.concluidas||0) >= 5) },
+      { icon:'🎯', nome:'Focado', desc:'Completou atividade de alta prioridade', obtida: sorted.some(m => m.pontos >= 30) },
+      { icon:'👨‍👩‍👧', nome:'Tribo Unida', desc:'3 ou mais membros cadastrados', obtida: membros.length >= 3 },
+      { icon:'💯', nome:'Centenário', desc:'100 pontos acumulados', obtida: sorted.some(m => m.pontos >= 100) },
+      { icon:'🚀', nome:'Supermembro', desc:'200 pontos acumulados', obtida: sorted.some(m => m.pontos >= 200) },
+    ];
+    conquEl.innerHTML = conquistas.map(c => `
+      <div style="background:var(--bg3);border:1px solid ${c.obtida?'rgba(52,211,153,0.3)':'var(--border)'};border-radius:12px;padding:16px;text-align:center;${c.obtida?'':'opacity:0.4'}">
+        <div style="font-size:2rem;margin-bottom:8px">${c.icon}</div>
+        <div style="font-weight:600;font-size:0.88rem;margin-bottom:4px">${c.nome}</div>
+        <div style="font-size:0.72rem;color:var(--muted)">${c.desc}</div>
+        ${c.obtida?'<div style="margin-top:8px;font-size:0.7rem;color:var(--green);font-weight:600">✅ Obtida!</div>':''}
+      </div>
+    `).join('');
+  } catch(e) { console.error(e); }
+}
+
+// ============================
+// NOTIFICAÇÕES
+// ============================
+async function checkNotificacoes() {
+  try {
+    const notifs = await api('GET', '/notificacoes');
+    const naoLidas = notifs.filter(n => !n.lida).length;
+    const badge = document.getElementById('notif-badge');
+    badge.textContent = naoLidas;
+    badge.classList.toggle('hidden', naoLidas === 0);
+
+    const list = document.getElementById('notif-list');
+    list.innerHTML = notifs.length ? notifs.map(n => `
+      <div class="notif-item ${n.lida?'lida':''}">
+        <div>${n.mensagem}</div>
+        <div class="notif-item-time">${formatDateTime(n.criado_em)}</div>
+      </div>
+    `).join('') : `<div class="notif-empty">🔕 Nenhuma notificação</div>`;
+  } catch(e) {}
+}
+
+async function marcarTodasLidas() {
+  await api('PATCH', '/notificacoes/lidas');
+  checkNotificacoes();
+  toast('Notificações marcadas como lidas', 'success');
+}
+
+function toggleNotif() {
+  const panel = document.getElementById('notif-panel');
+  const overlay = document.getElementById('notif-overlay');
+  panel.classList.toggle('open');
+  overlay.classList.toggle('open');
+  if (panel.classList.contains('open')) checkNotificacoes();
+}
+
+// ============================
+// MODAL MEMBROS
+// ============================
+function openModalMembro(id) {
+  state.editingMembro = id || null;
+  document.getElementById('modal-membro-title').textContent = id ? 'Editar Membro' : 'Novo Membro';
+  if (!id) {
+    document.getElementById('membro-nome').value = '';
+    document.getElementById('membro-papel').value = '';
+    document.getElementById('membro-cor').value = '#4f8ef7';
+  }
+  openModal('modal-membro');
+}
+
+async function editMembro(id) {
+  const m = state.membros.find(x => x.id === id);
+  if (!m) return;
+  state.editingMembro = id;
+  document.getElementById('modal-membro-title').textContent = 'Editar Membro';
+  document.getElementById('membro-nome').value = m.nome;
+  document.getElementById('membro-papel').value = m.papel;
+  document.getElementById('membro-cor').value = m.cor || '#4f8ef7';
+  openModal('modal-membro');
+}
+
+async function salvarMembro() {
+  const nome = document.getElementById('membro-nome').value.trim();
+  const papel = document.getElementById('membro-papel').value;
+  const cor = document.getElementById('membro-cor').value;
+  if (!nome || !papel) { toast('Preencha nome e papel!', 'error'); return; }
+  try {
+    if (state.editingMembro) {
+      await api('PUT', `/membros/${state.editingMembro}`, { nome, papel, cor });
+      toast('Membro atualizado!', 'success');
+    } else {
+      await api('POST', '/membros', { nome, papel, cor });
+      toast('Membro cadastrado!', 'success');
+    }
+    closeModal('modal-membro');
+    await loadAll();
+    if (state.currentPage === 'membros') renderMembros();
+    if (state.currentPage === 'dashboard') renderDashboard();
+  } catch(e) { toast(e.message, 'error'); }
+}
+
+async function deleteMembro(id) {
+  if (!confirm('Excluir este membro? Todas as atividades dele também serão removidas.')) return;
+  try {
+    await api('DELETE', `/membros/${id}`);
+    toast('Membro removido!', 'success');
+    await loadAll();
+    renderMembros();
+  } catch(e) { toast(e.message, 'error'); }
+}
+
+// ============================
+// MODAL ATIVIDADES
+// ============================
+function openModalAtiv(id) {
+  state.editingAtiv = id || null;
+  document.getElementById('modal-ativ-title').textContent = id ? 'Editar Atividade' : 'Nova Atividade';
+  if (!id) {
+    document.getElementById('ativ-titulo').value = '';
+    document.getElementById('ativ-descricao').value = '';
+    document.getElementById('ativ-tipo').value = '';
+    document.getElementById('ativ-prioridade').value = 'media';
+    document.getElementById('ativ-membro').value = '';
+    document.getElementById('ativ-data').value = new Date().toISOString().split('T')[0];
+    document.getElementById('ativ-hora').value = '';
+  }
+  populateMembroSelect('ativ-membro');
+  openModal('modal-ativ');
+}
+
+async function editAtiv(id) {
+  const a = todasAtividades.find(x => x.id === id) || state.calAtividades.find(x => x.id === id);
+  if (!a) return;
+  state.editingAtiv = id;
+  document.getElementById('modal-ativ-title').textContent = 'Editar Atividade';
+  document.getElementById('ativ-titulo').value = a.titulo;
+  document.getElementById('ativ-descricao').value = a.descricao || '';
+  document.getElementById('ativ-tipo').value = a.tipo;
+  document.getElementById('ativ-prioridade').value = a.prioridade || 'media';
+  document.getElementById('ativ-data').value = a.data_inicio;
+  document.getElementById('ativ-hora').value = a.hora || '';
+  populateMembroSelect('ativ-membro');
+  setTimeout(() => { document.getElementById('ativ-membro').value = a.id_membro; }, 50);
+  openModal('modal-ativ');
+}
+
+async function salvarAtiv() {
+  const titulo = document.getElementById('ativ-titulo').value.trim();
+  const descricao = document.getElementById('ativ-descricao').value.trim();
+  const tipo = document.getElementById('ativ-tipo').value;
+  const prioridade = document.getElementById('ativ-prioridade').value;
+  const id_membro = document.getElementById('ativ-membro').value;
+  const data_inicio = document.getElementById('ativ-data').value;
+  const hora = document.getElementById('ativ-hora').value;
+  if (!titulo || !tipo || !id_membro || !data_inicio) { toast('Preencha todos os campos obrigatórios!', 'error'); return; }
+  try {
+    const body = { titulo, descricao, tipo, prioridade, id_membro, data_inicio, hora };
+    if (state.editingAtiv) {
+      const original = todasAtividades.find(x => x.id === state.editingAtiv);
+      await api('PUT', `/atividades/${state.editingAtiv}`, { ...body, concluida: original?.concluida || 0 });
+      toast('Atividade atualizada!', 'success');
+    } else {
+      await api('POST', '/atividades', body);
+      toast('Atividade criada! 🎉', 'success');
+    }
+    closeModal('modal-ativ');
+    checkNotificacoes();
+    if (state.currentPage === 'atividades') renderAtividades();
+    if (state.currentPage === 'calendario') renderCalendario();
+    if (state.currentPage === 'dashboard') renderDashboard();
+  } catch(e) { toast(e.message, 'error'); }
+}
+
+async function deleteAtiv(id) {
+  if (!confirm('Excluir esta atividade?')) return;
+  try {
+    await api('DELETE', `/atividades/${id}`);
+    toast('Atividade removida!', 'success');
+    if (state.currentPage === 'atividades') renderAtividades();
+    if (state.currentPage === 'calendario') renderCalendario();
+    if (state.currentPage === 'dashboard') renderDashboard();
+  } catch(e) { toast(e.message, 'error'); }
+}
+
+async function toggleConcluir(id) {
+  try {
+    const res = await api('PATCH', `/atividades/${id}/concluir`);
+    if (res.concluida) {
+      toast('✅ Atividade concluída! Pontos adicionados!', 'success');
+    } else {
+      toast('↩ Atividade reaberta', 'success');
+    }
+    if (state.currentPage === 'atividades') renderAtividades();
+    if (state.currentPage === 'dashboard') renderDashboard();
+    if (state.currentPage === 'gamificacao') renderGamificacao();
+    checkNotificacoes();
+  } catch(e) { toast(e.message, 'error'); }
+}
+
+// ============================
+// HELPERS
+// ============================
+function populateMembroSelect(elId, addAll = false) {
+  const sel = document.getElementById(elId);
+  if (!sel) return;
+  const current = sel.value;
+  sel.innerHTML = addAll ? '<option value="">Todos os membros</option>' : '<option value="">Selecione o membro...</option>';
+  state.membros.forEach(m => {
+    const opt = document.createElement('option');
+    opt.value = m.id;
+    opt.textContent = `${m.nome} (${m.papel})`;
+    sel.appendChild(opt);
+  });
+  if (current) sel.value = current;
+}
+
+function formatDate(str) {
+  if (!str) return '';
+  const [y,m,d] = str.split('-');
+  return `${d}/${m}/${y}`;
+}
+function formatDateTime(str) {
+  if (!str) return '';
+  const d = new Date(str);
+  return isNaN(d) ? str : d.toLocaleString('pt-BR');
+}
+
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+// Fechar modal clicando fora
+document.querySelectorAll('.modal-overlay').forEach(m => {
+  m.addEventListener('click', e => { if (e.target === m) m.classList.remove('open'); });
+});
+
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('mobile-open');
+}
+
+function toast(msg, type = 'success') {
+  const el = document.createElement('div');
+  el.className = `toast ${type}`;
+  el.innerHTML = `<span class="toast-icon">${type==='success'?'✅':'❌'}</span> ${msg}`;
+  document.getElementById('toast-container').appendChild(el);
+  requestAnimationFrame(() => el.classList.add('show'));
+  setTimeout(() => {
+    el.classList.remove('show');
+    setTimeout(() => el.remove(), 300);
+  }, 3000);
+}
+
+// ============================
+// TEMA CLARO / ESCURO
+// ============================
+function applyTheme(light) {
+  document.documentElement.classList.toggle('light', light);
+  const btn = document.getElementById('theme-btn');
+  if (btn) btn.textContent = light ? '🌙' : '☀️';
+}
+
+function toggleTheme() {
+  const isLight = document.documentElement.classList.toggle('light');
+  localStorage.setItem('fh-theme', isLight ? 'light' : 'dark');
+  const btn = document.getElementById('theme-btn');
+  if (btn) btn.textContent = isLight ? '🌙' : '☀️';
+}
+
+// Aplica tema salvo antes de renderizar
+applyTheme(localStorage.getItem('fh-theme') === 'light');
+
+// ============================
+// START
+// ============================
+init();
+</script>
+</body>
+</html>
